@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  redis:
+    container_name: my-redis
+    image: redis:6.2.6
+    restart: always
+    ports:
+      - 7000:7000
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
